@@ -1,0 +1,20 @@
+<div data-duration-in="300" data-duration-out="100" class="tabs-3 w-tabs">
+    <div class="w-tab-menu">
+        <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
+            <div class="text-block-7">Forecast</div>
+        </a>
+    </div>
+    <div class="w-tab-content">
+        <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+            <div id="forecast-chart"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+	var graphs = {{forecast_plot | safe}};
+
+	Plotly.plot('forecast-chart',graphs,{});        
+
+</script>

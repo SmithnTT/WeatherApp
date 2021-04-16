@@ -1,0 +1,90 @@
+{% for report in weather_reports %}
+<div class="centered-container w-container">
+<div class="cards-grid-container">
+	<div id="w-node-a316904d-1722-90fc-6ee0-405a22cca727-e8741124">
+		<div class="cards-image-mask">
+			<div class="date">{{ report.date }}</div>
+			<div class="icon">
+				{% if report.icon == "01d" %}
+				<img src="{{ url_for('static', filename='images/039-sun.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "01n" %}
+				<img src="{{ url_for('static', filename='images/024-night-4.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "02d" %}
+				<img src="{{ url_for('static', filename='images/038-cloudy-3.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "02n" %}
+				<img src="{{ url_for('static', filename='images/002-cloud-1.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "03d" %}
+				<img src="{{ url_for('static', filename='images/001-cloud.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "03n" %}
+				<img src="{{ url_for('static', filename='images/001-cloud.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "04d" %}
+				<img src="{{ url_for('static', filename='images/011-cloudy.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "04n" %}
+				<img src="{{ url_for('static', filename='images/011-cloudy.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "09d" %}
+				<img src="{{ url_for('static', filename='images/034-cloudy-1.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "09n" %}
+				<img src="{{ url_for('static', filename='images/021-night-2.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "10d" %}
+				<img src="{{ url_for('static', filename='images/004-rainy-1.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "10n" %}
+				<img src="{{ url_for('static', filename='images/004-rainy-1.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "11d" %}
+				<img src="{{ url_for('static', filename='images/013-storm-2.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "11n" %}
+				<img src="{{ url_for('static', filename='images/013-storm-2.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "13d" %}
+				<img src="{{ url_for('static', filename='images/031-snowflake.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "13n" %}
+				<img src="{{ url_for('static', filename='images/031-snowflake.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "50d" %}
+				<img src="{{ url_for('static', filename='images/017-foog.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% elif report.icon == "50n" %}
+				<img src="{{ url_for('static', filename='images/017-foog.svg') }}" loading="lazy" width="85" alt="" class="icom-summ"/>
+				{% endif %}
+				<div class="text-summ">{{ report.summary }}</div>
+            </div>
+			<div class="cityname">{{ weather_address }}</div>
+            <div class="div-block temperature">
+                <div class="text-block-5">{{ report.curr_temp }}</div>
+                <div class="text-block-4">
+                    <strong class="bold-text-3">
+                    </strong>
+                    C
+                </div>
+            </div>
+			<div class="w-layout-grid grid">
+                <div id="w-node-f416827d-d708-cf73-d94f-d365a4f3d8c5-e8741124">
+                    <img src="{{ url_for('static', filename='images/021-winter2.svg') }}" loading="lazy" alt="Minimun temperature" title="Minimun temperature" class="icon-info"/>
+                    <div class="text-info">
+                        <strong class="text-info-temp-min">{{ report.min_temp }} C</strong>
+                    </div>
+                </div>
+                <div id="w-node-da878bd9-bde5-f091-198d-1c7855898942-e8741124">
+                    <img src="{{ url_for('static', filename='images/021-summer2.svg') }}" loading="lazy" alt="Maximun temperature" title="Maximun temperature" class="icon-info"/>
+                    <div class="text-info">
+                        <strong class="text-info-temp-max">{{ report.max_temp }} C</strong>
+                    </div>
+                </div>
+                <div id="w-node-dd9244f7-1a83-7f69-b0c5-0c5c22f1ba37-e8741124">
+                    <img src="{{ url_for('static', filename='images/049-windy-2.svg') }}" loading="lazy" alt="Wind speed" title="Wind speed" class="icon-info"/>
+                    <div class="text-info">{{ report.wind }} m/s</div>
+                </div>
+                <div id="w-node-afd9bb99-5b81-eedf-5e15-bff3656504a8-e8741124">
+                    <img src="{{ url_for('static', filename='images/025-humidity.svg') }}" loading="lazy" alt="Humidity" title="Humidity" class="icon-info"/>
+                    <div class="text-info">{{ report.hum }} %</div>
+                </div>
+                <div id="w-node-_1f28f359-ab0b-0a96-dc9a-27fe9c39d2ad-e8741124">
+                    <img src="{{ url_for('static', filename='images/040-sunrise.svg') }}" loading="lazy" alt="Sunrise" title="Sunrise" class="icon-info"/>
+                    <div class="text-info">{{ report.sunrise }}</div>
+                </div>
+                <div id="w-node-_1f2c3272-cf81-f32e-41e8-ed9aa8555eec-e8741124">
+                    <img src="{{ url_for('static', filename='images/041-sunset.svg') }}" loading="lazy" alt="Sunset" title="Sunset" class="icon-info"/>
+                    <div class="text-info">{{ report.sunset }}</div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+</div>
+{% endfor %}
