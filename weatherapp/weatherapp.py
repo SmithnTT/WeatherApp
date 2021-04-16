@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from weatherapp_controller import WeatherAppController
+import os
 
 import ipinfo
 
 app = Flask(__name__)
 CORS(app)
 
-access_token = '8e20907e0715ba'
+access_token = os.environ['IPINFO_API']
 
 @app.route("/")
 def index():

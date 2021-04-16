@@ -4,7 +4,7 @@ from geopy.geocoders import Nominatim
 from datetime import datetime
 import requests, os
  
-ow_api_key = "8773ff25b4ffdbcc37d752fb6b0a7a76"
+ow_api_key = os.environ['OPENWEATHER_API']
  
 class WeatherAppController:
  

@@ -15,6 +15,10 @@ A simple weather web application using python
 ## Quick start
 $cd weatherapp
 
+$export OPENWEATHER_API={your openweatherapi key}  - https://openweathermap.org/api
+
+$export IPINFO_API={your ipinfo key} - https://ipinfo.io/developers
+
 $export FLASK_APP=./weatherapp.py
 
 $export FLASK_ENV=development
