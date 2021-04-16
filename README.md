@@ -1,5 +1,5 @@
 # WeatherApp
-A simple weather application using python
+A simple weather web application using python
 
 ## Requirements
  - Python installed
